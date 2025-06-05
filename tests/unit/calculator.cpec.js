@@ -8,78 +8,78 @@ describe("Calculator", () => {
     calculator = new Calculator();
   });
 
-  describe("Положительные тесты", () => {
-    it("должен корректно складывать 5 + 3", () => {
+  describe("Positive tests", () => {
+    it("should correctly addition 5 + 3", () => {
       const result = calculator.calculate(5, 3, "+");
-      assert.strictEqual(result, 8, "Сложение 5 + 3 должно равняться 8");
+      assert.strictEqual(result, 8, "The addition of 5 + 3 should equal 8");
     });
 
-    it("должен корректно вычитать 10 - 4", () => {
+    it("should correctly subtract 10 - 4", () => {
       const result = calculator.calculate(10, 4, "-");
-      assert.strictEqual(result, 6, "Вычитание 10 - 4 должно равняться 6");
+      assert.strictEqual(result, 6, "Subtraction of 10 - 4 should equal 6");
     });
 
-    it("должен корректно умножать 6 * 7", () => {
+    it("should correctly multiply 6 * 7", () => {
       const result = calculator.calculate(6, 7, "*");
-      assert.strictEqual(result, 42, "Умножение 6 * 7 должно равняться 42");
+      assert.strictEqual(result, 42, "Multiplication of 6 * 7 should equal 42");
     });
 
-    it("должен корректно делить 15 / 3", () => {
+    it("should correctly divide 15 / 3", () => {
       const result = calculator.calculate(15, 3, "/");
-      assert.strictEqual(result, 5, "Деление 15 / 3 должно равняться 5");
+      assert.strictEqual(result, 5, "Division 15 / 3 should be equal to 5");
     });
 
-    it("должен корректно возводить 2^3", () => {
+    it("should correctly raise 2^3", () => {
       const result = calculator.calculate(2, 3, "^");
-      assert.strictEqual(result, 8, "Возведение 2^3 должно равняться 8");
+      assert.strictEqual(result, 8, "The exponentiation of 2^3 should equal 8");
     });
   });
 
-  describe("Отрицательные тесты", () => {
-    it("должен выбросить исключение при делении на ноль", () => {
+  describe("Negative tests", () => {
+    it("should throw an error when dividing by zero", () => {
       assert.throws(
         () => {
           calculator.calculate(10, 0, "/");
         },
-        /Деление на ноль невозможно/,
-        "Должно выбросить ошибку при делении на ноль"
+        /Division by zero is not possible/,
+        "It should throw an error when dividing by zero"
       );
     });
 
-    it("должен выбросить исключение при неверном операторе", () => {
+    it("should throw an error when dividing by zero", () => {
       assert.throws(
         () => {
           calculator.calculate(5, 3, "%");
         },
-        /Неверный оператор/,
-        "Должно выбросить ошибку при неверном операторе"
+        /Invalid operator/,
+        "should throw an error with an incorrect statement"
       );
     });
 
-    it("должен провалиться при неверном сложении 5 + 3", () => {
+    it("should fail if the addition of 5 + 3 is incorrect", () => {
       const result = calculator.calculate(5, 3, "+");
       assert.notStrictEqual(
         result,
         10,
-        "Сложение 5 + 3 не должно равняться 10"
+        "The addition of 5 + 3 should not equal 10"
       );
     });
 
-    it("должен провалиться при неверном умножении 4 * 5", () => {
+    it("should fail with an incorrect multiplication of 4 * 5", () => {
       const result = calculator.calculate(4, 5, "*");
       assert.notStrictEqual(
         result,
         25,
-        "Умножение 4 * 5 не должно равняться 25"
+        "Multiplication of 4 * 5 should not equal 25"
       );
     });
 
-    it("должен провалиться при неверном возведении 3^2", () => {
+    it("should fail if 3^2 is raised incorrectly", () => {
       const result = calculator.calculate(3, 2, "^");
       assert.notStrictEqual(
         result,
         10,
-        "Возведение 3^2 не должно равняться 10"
+        "The exponentiation of 3^2 should not equal 10"
       );
     });
   });
