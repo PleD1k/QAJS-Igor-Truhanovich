@@ -1,0 +1,24 @@
+{
+  "name": "qajs-igor-truhanovich",
+  "version": "1.0.0",
+  "description": "Test_calculator",
+  "homepage": "https://github.com/PleD1k/QAJS-Igor-Truhanovich#readme",
+  "bugs": {
+    "url": "https://github.com/PleD1k/QAJS-Igor-Truhanovich/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PleD1k/QAJS-Igor-Truhanovich.git"
+  },
+  "license": "ISC",
+  "author": "Igor",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/unit/calculator.cpec.js"
+  },
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.5.0"
+  }
+}
